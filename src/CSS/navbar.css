@@ -1,0 +1,154 @@
+/* Variables for consistent theming - matching login.css and register.css */
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --secondary-color: #f3f4f6;
+    --text-color: #1f2937;
+    --text-light: #6b7280;
+    --error-color: #ef4444;
+    --success-color: #10b981;
+    --border-color: #e5e7eb;
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                   0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --transition-speed: 0.3s;
+    --border-radius: 8px;
+    --navbar-height: 70px;
+  }
+  
+  .navbar {
+    display: flex;               /* horizontal flex layout */
+    justify-content: space-between;
+    align-items: center;         /* vertically center logo & nav items */
+    padding: 0 2rem;
+    height: var(--navbar-height);
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: slideDown 0.4s ease-out;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(24%) sepia(90%) saturate(1500%)
+            hue-rotate(230deg) brightness(95%);
+    transition: transform var(--transition-speed);
+  }
+  
+  .logo img:hover {
+    transform: scale(1.05);
+  }
+  
+  .nav-links {
+    display: flex;               /* flex layout for nav items */
+    align-items: center;         /* vertically center all nav items */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+  }
+  
+  .nav-item {
+    position: relative;          /* for the underline animation */
+  }
+  
+  /* Common styles for both <a> and <button> in nav */
+  .nav-item a,
+  .nav-item button {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    transition: color var(--transition-speed);
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+    line-height: 1.2;            /* helps keep text alignment consistent */
+  }
+  
+  .nav-item a:hover,
+  .nav-item button:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Underline animation for nav items */
+  .nav-item a::after,
+  .nav-item button::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed);
+  }
+  
+  .nav-item a:hover::after,
+  .nav-item button:hover::after {
+    width: 100%;
+  }
+  
+  /* Special styling for logout button */
+  .nav-item:last-child button {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .nav-item:last-child button:hover {
+    color: var(--primary-hover);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 0 1rem;
+    }
+    .nav-links {
+      gap: 1rem;
+    }
+  }
+  
+  /* If you want items to remain on one line even on small screens,
+     remove or comment out the following media query.
+     Otherwise, it will stack items vertically below 640px. */
+  @media (max-width: 640px) {
+    .navbar {
+      flex-direction: column;
+      height: auto;
+      padding: 1rem;
+    }
+    .logo {
+      margin-bottom: 1rem;
+    }
+    .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .nav-item {
+      margin: 0.25rem 0.5rem;
+    }
+  }
+  
+  /* Animations */
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  

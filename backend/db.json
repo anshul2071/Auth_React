@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1743351946457,
+      "name": "Sabrina KC",
+      "email": "sab221@outlook.com",
+      "password": "Goodwill#123",
+      "gender": "female",
+      "age": "23"
+    },
+    {
+      "id": 1743392673612,
+      "name": "Anshul Rawal",
+      "email": "anshul2071@gmail.com",
+      "password": "Goodwill#123",
+      "gender": "male",
+      "age": "22"
+    },
+    {
+      "id": 1743399510716,
+      "name": "Sonu Pun",
+      "email": "sonu667@gmail.com",
+      "password": "Goodwill#123",
+      "gender": "male",
+      "age": "26"
+    }
+  ]
+}
